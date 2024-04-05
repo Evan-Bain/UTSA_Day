@@ -1,0 +1,101 @@
+<string-array name=”UTSA_Day_answers_array”>
+	<item>Byte</item>
+<item>Kilobyte</item>
+<item>Pixel</item>
+<item>Megahertz</item>
+	
+<item>Compiling</item>
+	<item>Debugging</item>
+<item>Scripting</item>
+<item>Running</item>
+
+<item>USB Drive</item>
+<item>CPU</item>
+<item>RAM</item>
+<item>CMOS Battery</item>
+
+<item>Hyper Text Transfer Protocol</item>
+<item>High Tech Technical Platform</item>
+<item>Home Textual Terminal Program</item>
+<item>Hidden Technical Transfer Protocol</item>
+
+<item>1010</item>
+<item>10</item>
+<item>01100110</item>
+<item>1101</item>
+
+<item>Snowflake</item>
+<item>C#</item>
+<item>Java</item>
+<item>Python</item>
+
+<item>#<item>
+<item>//<item>
+<item>/* */<item>
+<item>{comment in curly braces}<item>
+
+<item>Debugging<item>
+<item>Compiling<item>
+<item>Execution<item>
+<item>Bettering<item>
+
+<item>Array<item>
+<item>Function<item>
+<item>Loop<item>
+<item>Variable<item>
+
+<item>JavaScript<item>
+<item>C++<item>
+<item>HTML<item>
+<item>Rust<item>
+
+<item>Cascading Style Sheets<item>
+<item>Computerized Style System<item>
+<item>Creative Style Script<item>
+<item>Coded Style Specification<item>
+
+<item>Nvidia<item>
+<item>Skibidi<item>
+<item>Samsung<item>
+<item>Microsoft<item>
+
+<item>JavaOS<item>
+<item>Ubuntu<item>
+<item>Windows 11<item>
+<item>Arch Linux<item>
+
+<item>Float<item>
+<item>Integer<item>
+<item>Array<item>
+<item>Pointer<item>
+
+<item>Verifying your identity beyond just a password<item>
+<item>Strengthening your Wi-Fi signal<item>
+<item>Increasing your internet speed<item>
+<item>Making sure your PC doesn’t have a virus<item>
+
+<item>Phishing Attack<item>
+<item>Trojan<item>
+<item>Macro<item>
+<item>Spyware<item>
+
+<item>Thunderbolt<item>
+<item>Bluetooth<item>
+<item>Wi-Fi<item>
+<item>Zigbee<item>
+
+<item>Grace Hopper<item>
+<item>Margaret Hamilton<item>
+<item>Ada Lovelace<item>
+<item>Katherine Johnson<item>
+
+<item>Breaking Nazi secret codes<item>
+<item>Inventing the transistor<item>
+<item>Developing the first Operating System<item>
+<item>Creating the first Neural Network<item>
+
+<item>Data Science and Machine Learning<item>
+<item>Web games<item>
+<item>Secure transfer of files<item>
+<item>Benchmarking<item>
+</string-array>
