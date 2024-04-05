@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".startup.StartupFragment" >
+
+    <TextView
+        android:id="@+id/welcome_to_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_to"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/first_dot_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dot"
+        app:layout_constraintStart_toEndOf="@id/welcome_to_text"
+        app:layout_constraintBottom_toBottomOf="@id/welcome_to_text"/>
+
+    <TextView
+        android:id="@+id/second_dot_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dot"
+        app:layout_constraintStart_toEndOf="@id/first_dot_text"
+        app:layout_constraintBottom_toBottomOf="@id/welcome_to_text"/>
+
+    <TextView
+        android:id="@+id/third_dot_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dot"
+        app:layout_constraintStart_toEndOf="@id/second_dot_text"
+        app:layout_constraintBottom_toBottomOf="@id/welcome_to_text"/>
+
+    <TextView
+        android:id="@+id/utsa_day_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/utsa_day"
+        app:layout_constraintStart_toEndOf="@id/third_dot_text"
+        app:layout_constraintTop_toBottomOf="@id/third_dot_text"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/test_knowledge_text_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".25"/>
+
+    <TextView
+        android:id="@+id/test_knowledge_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/how_much_do_you_know_about_computer_science"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/test_knowledge_text_guideline"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/navigate_to_leaderboard_button_guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".50"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/navigate_to_leaderboard_button_guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".8"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/navigate_to_leaderboard_button_guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".20"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/navigate_to_leaderboard_button_guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".8"/>
+
+    <Button
+        android:id="@+id/navigate_to_leaderboard_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/click_here"
+        app:layout_constraintStart_toStartOf="@id/navigate_to_leaderboard_button_guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/navigate_to_leaderboard_button_guideline_end"
+        app:layout_constraintTop_toTopOf="@id/navigate_to_leaderboard_button_guideline_top"
+        app:layout_constraintBottom_toBottomOf="@id/navigate_to_leaderboard_button_guideline_bottom"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

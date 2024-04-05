@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">UTSA_Day</string>
+    <string name="app_name">UTSA Day</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="click_here">Click here</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="quizzes">Quizzes</string>
+    <string name="take_quiz">Take Quiz</string>
+    <string name="continue_quiz">Continue</string>
+    <string name="next">Next</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="dot">.</string>
+    <string name="welcome">Welcome</string>
+    <string name="utsa_day">UTSA Day</string>
+    <string name="how_much_do_you_know_about_computer_science">How much do you know about Computer Science?</string>
 </resources>

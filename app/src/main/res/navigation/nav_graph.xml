@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startupFragment">
+
+    <fragment
+        android:id="@+id/startupFragment"
+        android:name="com.example.utsa_day.startup.StartupFragment"
+        android:label="@string/welcome"
+        tools:layout="@layout/fragment_startup" >
+        <action
+            android:id="@+id/startup_action"
+            app:destination="@id/leaderboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/leaderboardFragment"
+        android:name="com.example.utsa_day.leaderboard.LeaderboardFragment"
+        android:label="@string/quizzes"
+        tools:layout="@layout/fragment_leaderboard" />
+</navigation>

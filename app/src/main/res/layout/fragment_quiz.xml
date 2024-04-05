@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- background/layout for quiz -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.utsa_day.leaderboard.quiz.QuizViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/quiz_card_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        app:cardCornerRadius="16dp" >
+
+        <!-- motion layout for quiz -->
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/quiz_motion_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutDescription="@xml/fragment_quiz_scene">
+
+            <!-- title of quiz (dino name + Quiz) -->
+            <TextView
+                android:id="@+id/quiz_title"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="T-Rex Quiz" />
+
+            <!-- quiz question -->
+            <TextView
+                android:id="@+id/quiz_question"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="48dp"
+                android:text="@{viewModel.quizQuestion}"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/quiz_title"
+                app:layout_constraintTop_toBottomOf="@id/quiz_title"
+                tools:text="How strong is the T-Rex's bite force?" />
+
+            <!-- quiz answers -->
+            <RadioGroup
+                android:id="@+id/quiz_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:onCheckedChanged="@{(v, i) -> viewModel.setRadioButtonClicked(i)}"
+                app:layout_constraintStart_toStartOf="@id/quiz_question"
+                app:layout_constraintTop_toBottomOf="@id/quiz_question">
+
+                <RadioButton
+                    android:id="@+id/quiz_radio_button_0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.firstAnswer}"
+                    tools:text="900 pounds" />
+
+                <RadioButton
+                    android:id="@+id/quiz_radio_button_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.secondAnswer}"
+                    tools:text="12,800 pounds" />
+
+                <RadioButton
+                    android:id="@+id/quiz_radio_button_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.thirdAnswer}"
+                    tools:text="100,000 pounds" />
+
+                <RadioButton
+                    android:id="@+id/quiz_radio_button_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.fourthAnswer}"
+                    tools:text="55,600 pounds" />
+            </RadioGroup>
+
+            <!-- button to submit answer -->
+            <Button
+                android:id="@+id/quiz_finish_button"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:enabled="@{viewModel.nextButtonEnabled}"
+                android:onClick="@{() -> viewModel.nextButtonClicked(-1)}"
+                android:text="@string/next"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/quiz_radio_group" />
+            <!-- quiz layout -->
+
+            <!-- result layout -->
+            <!-- header word -->
+            <TextView
+                android:id="@+id/quiz_result_message_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:paddingTop="16dp"
+                android:text="@{viewModel.resultMessageText}"
+                android:textSize="32sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/quiz_result_text"
+                app:layout_constraintStart_toEndOf="parent" />
+
+            <!-- statement -->
+            <TextView
+                android:id="@+id/quiz_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@{viewModel.resultText}"
+                android:textSize="32sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/quiz_percent_text"
+                app:layout_constraintStart_toEndOf="parent" />
+
+            <!-- percent -->
+            <TextView
+                android:id="@+id/quiz_percent_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@{viewModel.percentText}"
+                android:textSize="32sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- button to close quiz -->
+            <Button
+                android:id="@+id/quiz_done_button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="16dp"
+                android:onClick="@{() -> viewModel.setQuizVisible(false)}"
+                android:text="@string/continue_quiz"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/quiz_percent_text" />
+            <!-- result layout -->
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
