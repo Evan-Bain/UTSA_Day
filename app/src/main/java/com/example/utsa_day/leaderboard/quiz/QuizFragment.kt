@@ -5,15 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.example.utsa_day.R
 import com.example.utsa_day.databinding.FragmentQuizBinding
+import com.example.utsa_day.MainViewModel
 import com.example.utsa_day.leaderboard.model.data.Quiz
 
 class QuizFragment : Fragment() {
 
     private lateinit var binding: FragmentQuizBinding
-    private val viewModel: QuizViewModel by viewModels()
+    private val quizViewModel: QuizViewModel by viewModels()
+    private val leaderboardViewModel: MainViewModel by activityViewModels()
+
+    private val TAG = "QuizFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,13 +29,27 @@ class QuizFragment : Fragment() {
             inflater, container, false
         )
         binding.lifecycleOwner = viewLifecycleOwner
-        binding.viewModel = viewModel
+        binding.viewModel = quizViewModel
 
         val quizStrings: Quiz = requireArguments().getParcelable("quizSelected")!!
         val quizText = quizStrings.getQuizStrings()
         val quizCorrectAnswers = quizStrings.correctAnswers
 
-        viewModel.setQuizStringAnswers(
+        binding.quizTitle.text = quizStrings.name
+
+        binding.enterNameEditText.editText?.doOnTextChanged { text, _, _, _ ->
+
+            if (text?.length == 1) {
+                with(binding.quizMotionLayout) {
+                    setTransition(R.id.quiz_start)
+                    transitionToEnd()
+                }
+            }
+
+            binding.quizFinishButton.isEnabled = text?.length != 0
+        }
+
+        quizViewModel.setQuizStringAnswers(
             listOf(
                 quizText[0]?.get(0) ?: "ERROR",
                 quizText[0]?.get(1) ?: "ERROR",
@@ -39,7 +59,12 @@ class QuizFragment : Fragment() {
             )
         )
 
-        viewModel.nextButtonEnabled.observe(viewLifecycleOwner) {
+        quizViewModel.quizVisible.observe(viewLifecycleOwner) {
+            if (!it) leaderboardViewModel.setRemoveQuiz()
+        }
+
+        quizViewModel.nextButtonEnabled.observe(viewLifecycleOwner) {
+
             with(binding.quizMotionLayout) {
                 setTransition(R.id.quiz_next_question)
                 if (it) {
@@ -50,13 +75,23 @@ class QuizFragment : Fragment() {
             }
         }
 
-        viewModel.nextButtonClicked.observe(viewLifecycleOwner) {
+        quizViewModel.nextButtonClicked.observe(viewLifecycleOwner) {
+
+            if (!quizViewModel.initialized) {
+                quizViewModel.setInitialized()
+                with(binding.quizMotionLayout) {
+                    setTransition(R.id.quiz_end)
+                    transitionToEnd()
+                }
+                quizViewModel.resetNextButton()
+                return@observe
+            }
 
             //make sure quiz is visible or main thread is stalled continuously
             when (it) {
                 0 -> return@observe
                 null -> {
-                    viewModel.resetAnswersCorrect()
+                    quizViewModel.resetAnswersCorrect()
                     binding.quizRadioGroup.clearCheck()
                     binding.quizMotionLayout.setTransition(R.id.retry)
                     return@observe
@@ -64,33 +99,33 @@ class QuizFragment : Fragment() {
             }
 
             val correctAnswer = quizCorrectAnswers[it - 1]
-            when (viewModel.radioButtonClicked.value) {
+            when (quizViewModel.radioButtonClicked.value) {
                 0 -> {
                     if (binding.quizRadioButton0.text == correctAnswer)
-                        viewModel.updateAnswerCorrect()
+                        quizViewModel.updateAnswerCorrect()
                 }
                 1 -> {
                     if (binding.quizRadioButton1.text == correctAnswer)
-                        viewModel.updateAnswerCorrect()
+                        quizViewModel.updateAnswerCorrect()
                 }
                 2 -> {
                     if (binding.quizRadioButton2.text == correctAnswer)
-                        viewModel.updateAnswerCorrect()
+                        quizViewModel.updateAnswerCorrect()
                 }
                 3 -> {
                     if (binding.quizRadioButton3.text == correctAnswer)
-                        viewModel.updateAnswerCorrect()
+                        quizViewModel.updateAnswerCorrect()
                 }
             }
 
-            viewModel.setRadioButtonClicked(binding.quizRadioGroup.checkedRadioButtonId)
+            quizViewModel.setRadioButtonClicked(binding.quizRadioGroup.checkedRadioButtonId)
             binding.quizRadioGroup.clearCheck()
 
             //only set the text for quiz for how many questions there are
             if (it < 4) {
 
                 //set text in quiz with dataBinding
-                viewModel.setQuizStringAnswers(
+                quizViewModel.setQuizStringAnswers(
                     listOf(
                         quizText[it]?.get(0) ?: "ERROR",
                         quizText[it]?.get(1) ?: "ERROR",
@@ -100,7 +135,7 @@ class QuizFragment : Fragment() {
                     )
                 )
             } else {
-                if (viewModel.quizPassed) {
+                if (quizViewModel.quizPassed) {
                     with(binding.quizMotionLayout) {
                         setTransition(R.id.quiz_passed)
                         transitionToEnd()

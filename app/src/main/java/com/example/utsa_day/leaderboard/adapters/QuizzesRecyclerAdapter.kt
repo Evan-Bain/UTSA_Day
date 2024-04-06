@@ -7,19 +7,18 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.utsa_day.databinding.QuizzesRecyclerLayoutBinding
 import com.example.utsa_day.leaderboard.model.data.Quiz
-import com.example.utsa_day.leaderboard.model.data.Quizzes
 
 class QuizzesRecyclerAdapter(private val onButtonClicked: (Quiz) -> Unit) :
-    ListAdapter<Quizzes, QuizzesRecyclerAdapter.ViewHolder>(QuizzesDiffCallback()) {
+    ListAdapter<Quiz, QuizzesRecyclerAdapter.ViewHolder>(QuizzesDiffCallback()) {
 
     inner class ViewHolder(val binding: QuizzesRecyclerLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
-            fun bind(data: Quizzes) {
+            fun bind(data: Quiz) {
                 binding.quizNameText.text = data.name
                 binding.quizPointsText.text = "20 pts"
 
                 binding.takeQuizButton.setOnClickListener {
-                    onButtonClicked(data.quiz)
+                    onButtonClicked(data)
                 }
             }
     }
@@ -35,12 +34,12 @@ class QuizzesRecyclerAdapter(private val onButtonClicked: (Quiz) -> Unit) :
     }
 }
 
-class QuizzesDiffCallback : DiffUtil.ItemCallback<Quizzes>() {
-    override fun areItemsTheSame(oldItem: Quizzes, newItem: Quizzes): Boolean {
+class QuizzesDiffCallback : DiffUtil.ItemCallback<Quiz>() {
+    override fun areItemsTheSame(oldItem: Quiz, newItem: Quiz): Boolean {
         return oldItem.name == newItem.name
     }
 
-    override fun areContentsTheSame(oldItem: Quizzes, newItem: Quizzes): Boolean {
+    override fun areContentsTheSame(oldItem: Quiz, newItem: Quiz): Boolean {
         return oldItem == newItem
     }
 

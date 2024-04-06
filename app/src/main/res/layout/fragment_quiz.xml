@@ -22,7 +22,7 @@
         <androidx.constraintlayout.motion.widget.MotionLayout
             android:id="@+id/quiz_motion_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:layoutDescription="@xml/fragment_quiz_scene">
 
             <!-- title of quiz (dino name + Quiz) -->
@@ -35,7 +35,36 @@
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="T-Rex Quiz" />
+                tools:text="UTSA Quiz" />
+
+            <TextView
+                android:id="@+id/enter_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="@string/enter_name"
+                android:layout_marginTop="16dp"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/quiz_title"
+                app:layout_constraintTop_toBottomOf="@id/quiz_title" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enter_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="16dp"
+                android:hint="@string/enter_name_edit"
+                app:layout_constraintStart_toStartOf="@id/enter_name_text"
+                app:layout_constraintTop_toBottomOf="@id/enter_name_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- quiz question -->
             <TextView
@@ -45,6 +74,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="48dp"
+                android:visibility="gone"
                 android:text="@{viewModel.quizQuestion}"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="@id/quiz_title"
@@ -59,6 +89,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
+                android:visibility="gone"
                 android:onCheckedChanged="@{(v, i) -> viewModel.setRadioButtonClicked(i)}"
                 app:layout_constraintStart_toStartOf="@id/quiz_question"
                 app:layout_constraintTop_toBottomOf="@id/quiz_question">
@@ -100,6 +131,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
+                android:visibility="gone"
                 android:enabled="@{viewModel.nextButtonEnabled}"
                 android:onClick="@{() -> viewModel.nextButtonClicked(-1)}"
                 android:text="@string/next"

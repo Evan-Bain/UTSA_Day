@@ -1,24 +1,27 @@
 <resources>
-    <string name="app_name">UTSA Day</string>
-    <string name="click_here">Click here</string>
-    <string name="leaderboard">Leaderboard</string>
-    <string name="quizzes">Quizzes</string>
-    <string name="take_quiz">Take Quiz</string>
-    <string name="continue_quiz">Continue</string>
-    <string name="next">Next</string>
-    <string name="welcome_to">Welcome to</string>
+    <string name="app_name">Día de UTSA</string>
+    <string name="click_here">Haz clic aquí</string>
+    <string name="leaderboard">Tabla de líderes</string>
+    <string name="quizzes">Cuestionarios</string>
+    <string name="take_quiz">Realizar cuestionario</string>
+    <string name="continue_quiz">Continuar</string>
+    <string name="next">Siguiente</string>
+    <string name="welcome_to">Bienvenido a</string>
     <string name="dot">.</string>
-    <string name="welcome">Welcome</string>
-    <string name="utsa_day">UTSA Day</string>
-    <string name="how_much_do_you_know_about_computer_science">How much do you know about Computer Science?</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="utsa_day">Día de UTSA</string>
+    <string name="how_much_do_you_know_about_computer_science">¿Cuánto sabes sobre Informática?</string>
+    <string name="enter_name">Please enter your name:</string>
+    <string name="enter_name_edit">Enter name</string>
+
     <string name="points">20 pts</string>
 
     <string name="hardware_quiz_title">Hardware Quiz</string>
     <string-array name="general_UTSA_Day_hardware_questions_array">
-        <item>What is the most basic unit of information in a computer?</item>
-        <item>Which of the following is NOT a part of a personal computer?</item>
-        <item>Which manufacturer makes GPUs for personal computers?</item>
-        <item>Which of these is NOT a way to wirelessly connect devices?</item>
+        <item>Cual unidad de informacion es la mas basica en una computadora?</item>
+        <item>Cual de los siguentes no es parte de una computadora personal?</item>
+        <item>Cual marca manufactura tarjetas de graphicos para computadoras?</item>
+        <item>Cual de los siguentes no es una manera de conectar dispositivos inalambricos?</item>
     </string-array>
 
 
@@ -48,10 +51,10 @@
 
     <string name="development_quiz_title">Development Quiz</string>
     <string-array name="general_UTSA_Day_development_questions_array">
-        <item>What is the process of converting a high level programming language into machine code that the computer can understand?</item>
-        <item>Which of these is NOT a programming language?</item>
-        <item>What are the Python libraries Pandas and NumPy used for?</item>
-        <item>Which of these is NOT a real operating system?</item>
+        <item>Cuál es el proceso de convertir un lenguaje de programación de alto nivel en código máquina que la computadora pueda entender?</item>
+        <item>Cuál de estos NO es un lenguaje de programación?</item>
+        <item>Para qué se utilizan las bibliotecas de Python Pandas y NumPy?</item>
+        <item>Cuál de estos NO es un sistema operativo real?</item>
     </string-array>
 
     <string-array name="general_UTSA_Day_development_answers_array">
@@ -78,10 +81,10 @@
 
     <string name="languages_quiz_title">Programming Languages Quiz</string>
     <string-array name="general_UTSA_Day_languages_questions_array">
-        <item>What does the acronym HTTP stand for?</item>
-        <item>What is the symbol used to denote comments in a Python program?</item>
-        <item>Which programming language is primarily used for web development?</item>
-        <item>Who developed the language COBOL and the first ever compiler?</item>
+        <item>Qué significa el acrónimo HTTP?</item>
+        <item>Cuál es el símbolo utilizado para denotar comentarios en un programa de Python?</item>
+        <item>Qué lenguaje de programación se utiliza principalmente para el desarrollo web?</item>
+        <item>Quién desarrolló el lenguaje COBOL y el primer compilador?</item>
     </string-array>
 
     <string-array name="general_UTSA_Day_languages_answers_array">
@@ -108,10 +111,10 @@
 
     <string name="misc_quiz_title">Misc Quiz</string>
     <string-array name="general_UTSA_Day_misc_questions_array">
-        <item>What is the binary equivalent of the decimal number 9?</item>
-        <item>What is a two-factor authentication (2FA) for?</item>
-        <item>What kind of attack fakes being a legitimate website to steal user information?</item>
-        <item>What was Alan Turing known for?</item>
+        <item>¿Cuál es el equivalente binario del número decimal 9?</item>
+        <item>¿Para qué sirve la autenticación de dos factores (2FA)?</item>
+        <item>¿Qué tipo de ataque finge ser un sitio web legítimo para robar información de usuarios?</item>
+        <item>¿Por qué es conocido Alan Turing?</item>
     </string-array>
 
     <string-array name="general_UTSA_Day_misc_answers_array">
@@ -120,29 +123,29 @@
         <item>01100110</item>
         <item>1100</item>
 
-        <item>Verifying your identity beyond just a password</item>
-        <item>Strengthening your Wi-Fi signal</item>
-        <item>Increasing your internet speed</item>
-        <item>Making sure your PC doesn’t have a virus</item>
+        <item>Verificando tu identidad más allá de solo una contraseña</item>
+        <item>Fortaleciendo tu señal de Wi-Fi</item>
+        <item>Aumentando tu velocidad de internet</item>
+        <item>Asegurándote de que tu PC no tenga un virus</item>
 
         <item>Phishing Attack</item>
         <item>Trojan</item>
         <item>Macro</item>
         <item>Spyware</item>
 
-        <item>Breaking Nazi secret codes</item>
-        <item>Inventing the transistor</item>
-        <item>Developing the first Operating System</item>
-        <item>Creating the first Neural Network</item>
+        <item>Descifrando códigos secretos nazis</item>
+        <item>Inventando el transistor</item>
+        <item>Desarrollando el primer Sistema Operativo</item>
+        <item>Creando la primera Red Neuronal</item>
 
     </string-array>
 
     <string name="utsa_day_quiz_title">UTSA Quiz</string>
     <string-array name="general_UTSA_Day_UTSA_questions_array">
-        <item>How many students does UTSA have?</item>
-        <item>When was UTSA founded?</item>
-        <item>What is the Rowdy Statue of?</item>
-        <item>What percent of students are the first generation in their family to attend a University?</item>
+        <item>¿Cuántos estudiantes tiene la UTSA?</item>
+        <item>¿Cuándo fue fundada la UTSA?</item>
+        <item>¿De qué es la estatua de Rowdy?</item>
+        <item>¿Qué porcentaje de estudiantes son la primera generación de su familia en asistir a una Universidad?</item>
     </string-array>
 
     <string-array name="general_UTSA_Day_UTSA_answers_array">

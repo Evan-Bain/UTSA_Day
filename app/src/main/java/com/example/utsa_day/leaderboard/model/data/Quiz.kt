@@ -9,9 +9,43 @@ import kotlinx.parcelize.RawValue
 
 @Parcelize
 data class Quiz(
+    val name: String,
     private val resources: @RawValue Resources,
     private val position: Int
 ) : Parcelable {
+
+    companion object {
+        fun getQuizzes(resources: Resources): List<Quiz> {
+            return listOf(
+                Quiz(
+                    resources.getString(R.string.hardware_quiz_title),
+                    resources,
+                    0
+                ),
+                Quiz(
+                    resources.getString(R.string.development_quiz_title),
+                    resources,
+                    1
+                ),
+                Quiz(
+                    resources.getString(R.string.languages_quiz_title),
+                    resources,
+                    2
+                ),
+                Quiz(
+                    resources.getString(R.string.utsa_day_quiz_title),
+                    resources,
+                    4
+                ),
+                Quiz(
+                    resources.getString(R.string.misc_quiz_title),
+                    resources,
+                    3
+                )
+            )
+        }
+    }
+
     private val _correctAnswers = mutableListOf<String>()
     val correctAnswers: List<String>
         get() = _correctAnswers

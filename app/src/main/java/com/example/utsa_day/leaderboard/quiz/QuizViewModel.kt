@@ -48,6 +48,9 @@ class QuizViewModel : ViewModel() {
     val nextButtonClicked: LiveData<Int>
         get() = _nextButtonClicked
 
+    fun resetNextButton() {
+        _nextButtonClicked.value = 0
+    }
 
     /** indicate what page of quiz is displayed  **/
     fun nextButtonClicked(value: Int) {
@@ -57,6 +60,7 @@ class QuizViewModel : ViewModel() {
         0: passed at the of animation for exiting the quiz
         5: passed when user opens quiz of a previously passed quiz
         */
+
         _nextButtonClicked.value = when(value) {
             -1 -> (nextButtonClicked.value ?: 0) + 1
             0 -> null
