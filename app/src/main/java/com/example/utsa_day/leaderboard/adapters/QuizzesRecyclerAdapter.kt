@@ -16,7 +16,7 @@ class QuizzesRecyclerAdapter(private val onButtonClicked: (Quiz) -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
             fun bind(data: Quizzes) {
                 binding.quizNameText.text = data.name
-                binding.quizPointsText.text = data.points
+                binding.quizPointsText.text = "20 pts"
 
                 binding.takeQuizButton.setOnClickListener {
                     onButtonClicked(data.quiz)
