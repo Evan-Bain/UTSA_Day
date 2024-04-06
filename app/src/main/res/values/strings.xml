@@ -47,7 +47,7 @@
     <string-array name="general_UTSA_Day_development_questions_array">
         <item>What is the process of converting a high level programming language into machine code that the computer can understand?</item>
         <item>Which of these is NOT a programming language?</item>
-        <item>What is the process of searching for and fixing errors in code called?</item>
+        <item>What are the Python libraries Pandas and NumPy used for?</item>
         <item>Which of these is NOT a real operating system?</item>
     </string-array>
 
@@ -62,10 +62,10 @@
         <item>Java</item>
         <item>Python</item>
 
-        <item>Debugging</item>
-        <item>Compiling</item>
-        <item>Execution</item>
-        <item>Bettering</item>
+        <item>Data Science and Machine Learning</item>
+        <item>Web games</item>
+        <item>Secure transfer of files</item>
+        <item>Benchmarking</item>
 
         <item>JavaOS</item>
         <item>Ubuntu</item>
@@ -77,7 +77,7 @@
         <item>What does the acronym HTTP stand for?</item>
         <item>What is the symbol used to denote comments in a Python program?</item>
         <item>Which programming language is primarily used for web development?</item>
-        <item>What does the acronym CSS stand for?</item>
+        <item>Who developed the language COBOL and the first ever compiler?</item>
     </string-array>
 
     <string-array name="general_UTSA_Day_languages_answers_array">
@@ -96,19 +96,17 @@
         <item>HTML</item>
         <item>Rust</item>
 
-        <item>Cascading Style Sheets</item>
-        <item>Computerized Style System</item>
-        <item>Creative Style Script</item>
-        <item>Coded Style Specification</item>
-
+        <item>Grace Hopper</item>
+        <item>Margaret Hamilton</item>
+        <item>Ada Lovelace</item>
+        <item>Katherine Johnson</item>
     </string-array>
 
     <string-array name="general_UTSA_Day_misc_questions_array">
         <item>What is the binary equivalent of the decimal number 9?</item>
-        <item>What is a common data structure used to store collections of items?</item>
-        <item>What is a number data type that can store fractional / decimal information?</item>
         <item>What is a two-factor authentication (2FA) for?</item>
         <item>What kind of attack fakes being a legitimate website to steal user information?</item>
+        <item>What was Alan Turing known for?</item>
     </string-array>
 
     <string-array name="general_UTSA_Day_misc_answers_array">
@@ -116,16 +114,6 @@
         <item>11</item>
         <item>01100110</item>
         <item>1100</item>
-
-        <item>Array</item>
-        <item>Function</item>
-        <item>Loop</item>
-        <item>Variable</item>
-
-        <item>Float</item>
-        <item>Integer</item>
-        <item>Array</item>
-        <item>Pointer</item>
 
         <item>Verifying your identity beyond just a password</item>
         <item>Strengthening your Wi-Fi signal</item>
@@ -137,30 +125,41 @@
         <item>Macro</item>
         <item>Spyware</item>
 
-    </string-array>
-
-    <string-array name="general_UTSA_Day_history_questions_array">
-        <item>Who developed the first compiler (and the language, COBOL)?</item>
-        <item>What was Alan Turing known for?</item>
-        <item>What are the Python libraries Pandas and NumPy used for?</item>
-
-    </string-array>
-
-    <string-array name="general_UTSA_Day_history_answers_array">
-        <item>Grace Hopper</item>
-        <item>Margaret Hamilton</item>
-        <item>Ada Lovelace</item>
-        <item>Katherine Johnson</item>
-
         <item>Breaking Nazi secret codes</item>
         <item>Inventing the transistor</item>
         <item>Developing the first Operating System</item>
         <item>Creating the first Neural Network</item>
 
-        <item>Data Science and Machine Learning</item>
-        <item>Web games</item>
-        <item>Secure transfer of files</item>
-        <item>Benchmarking</item>
+    </string-array>
+
+    <string-array name="general_UTSA_Day_UTSA_questions_array">
+        <item>How many students does UTSA have?</item>
+        <item>When was UTSA founded?</item>
+        <item>What is the Rowdy Statue of?</item>
+        <item>What percent of students are the first generation in their family to attend a University?</item>
+    </string-array>
+
+    <string-array name="general_UTSA_Day_UTSA_answers_array">
+        <item>35000</item>
+        <item>24000</item>
+        <item>19000</item>
+        <item>8000</item>
+
+        <item>1969</item>
+        <item>1982</item>
+        <item>1942</item>
+        <item>1899</item>
+
+        <item>Roadrunner</item>
+        <item>Alamo</item>
+        <item>UTSA's President</item>
+        <item>Texas Star</item>
+
+        <item>72%</item>
+        <item>42%</item>
+        <item>33%</item>
+        <item>74%</item>
+
 
     </string-array>
 
