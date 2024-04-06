@@ -1,0 +1,173 @@
+<resources>
+    <string name="app_name">Día de UTSA</string>
+    <string name="click_here">Haz clic aquí</string>
+    <string name="leaderboard">Tabla de líderes</string>
+    <string name="quizzes">Cuestionarios</string>
+    <string name="take_quiz">Realizar cuestionario</string>
+    <string name="continue_quiz">Continuar</string>
+    <string name="next">Siguiente</string>
+    <string name="welcome_to">Bienvenido a</string>
+    <string name="dot">.</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="utsa_day">Día de UTSA</string>
+    <string name="how_much_do_you_know_about_computer_science">¿Cuánto sabes sobre Informática?</string>
+
+    <string name="points">20 pts</string>
+
+    <string name="hardware_quiz_title">Hardware Quiz</string>
+    <string-array name="general_UTSA_Day_hardware_questions_array">
+        <item>Cual unidad de informacion es la mas basica en una computadora?</item>
+        <item>Cual de los siguentes no es parte de una computadora personal?</item>
+        <item>Cual marca manufactura tarjetas de graphicos para computadoras?</item>
+        <item>Cual de los siguentes no es una manera de conectar dispositivos inalambricos?</item>
+    </string-array>
+
+
+    <string-array name="general_UTSA_Day_hardware_answers_array">
+        <item>Byte</item>
+        <item>Kilobyte</item>
+        <item>Pixel</item>
+        <item>Megahertz</item>
+
+        <item>USB Drive</item>
+        <item>CPU</item>
+        <item>RAM</item>
+        <item>CMOS Battery</item>
+
+        <item>Nvidia</item>
+        <item>Skibidi</item>
+        <item>Samsung</item>
+        <item>Microsoft</item>
+
+        <item>Thunderbolt</item>
+        <item>Bluetooth</item>
+        <item>Wi-Fi</item>
+        <item>Zigbee</item>
+
+    </string-array>
+
+
+    <string name="development_quiz_title">Development Quiz</string>
+    <string-array name="general_UTSA_Day_development_questions_array">
+        <item>Cuál es el proceso de convertir un lenguaje de programación de alto nivel en código máquina que la computadora pueda entender?</item>
+        <item>Cuál de estos NO es un lenguaje de programación?</item>
+        <item>Para qué se utilizan las bibliotecas de Python Pandas y NumPy?</item>
+        <item>Cuál de estos NO es un sistema operativo real?</item>
+    </string-array>
+
+    <string-array name="general_UTSA_Day_development_answers_array">
+        <item>Compiling</item>
+        <item>Debugging</item>
+        <item>Scripting</item>
+        <item>Running</item>
+
+        <item>Snowflake</item>
+        <item>C#</item>
+        <item>Java</item>
+        <item>Python</item>
+
+        <item>Data Science and Machine Learning</item>
+        <item>Web games</item>
+        <item>Secure transfer of files</item>
+        <item>Benchmarking</item>
+
+        <item>JavaOS</item>
+        <item>Ubuntu</item>
+        <item>Windows 95</item>
+        <item>Arch Linux</item>
+    </string-array>
+
+    <string name="languages_quiz_title">Programming Languages Quiz</string>
+    <string-array name="general_UTSA_Day_languages_questions_array">
+        <item>Qué significa el acrónimo HTTP?</item>
+        <item>Cuál es el símbolo utilizado para denotar comentarios en un programa de Python?</item>
+        <item>Qué lenguaje de programación se utiliza principalmente para el desarrollo web?</item>
+        <item>Quién desarrolló el lenguaje COBOL y el primer compilador?</item>
+    </string-array>
+
+    <string-array name="general_UTSA_Day_languages_answers_array">
+        <item>Hyper Text Transfer Protocol</item>
+        <item>High Tech Technical Platform</item>
+        <item>Home Textual Terminal Program</item>
+        <item>Hidden Technical Transfer Protocol</item>
+
+        <item>#</item>
+        <item>//</item>
+        <item>/* */</item>
+        <item>{comment in curly braces}</item>
+
+        <item>JavaScript</item>
+        <item>C++</item>
+        <item>HTML</item>
+        <item>Rust</item>
+
+        <item>Grace Hopper</item>
+        <item>Margaret Hamilton</item>
+        <item>Ada Lovelace</item>
+        <item>Katherine Johnson</item>
+    </string-array>
+
+    <string name="misc_quiz_title">Misc Quiz</string>
+    <string-array name="general_UTSA_Day_misc_questions_array">
+        <item>¿Cuál es el equivalente binario del número decimal 9?</item>
+        <item>¿Para qué sirve la autenticación de dos factores (2FA)?</item>
+        <item>¿Qué tipo de ataque finge ser un sitio web legítimo para robar información de usuarios?</item>
+        <item>¿Por qué es conocido Alan Turing?</item>
+    </string-array>
+
+    <string-array name="general_UTSA_Day_misc_answers_array">
+        <item>1001</item>
+        <item>11</item>
+        <item>01100110</item>
+        <item>1100</item>
+
+        <item>Verificando tu identidad más allá de solo una contraseña</item>
+        <item>Fortaleciendo tu señal de Wi-Fi</item>
+        <item>Aumentando tu velocidad de internet</item>
+        <item>Asegurándote de que tu PC no tenga un virus</item>
+
+        <item>Phishing Attack</item>
+        <item>Trojan</item>
+        <item>Macro</item>
+        <item>Spyware</item>
+
+        <item>Descifrando códigos secretos nazis</item>
+        <item>Inventando el transistor</item>
+        <item>Desarrollando el primer Sistema Operativo</item>
+        <item>Creando la primera Red Neuronal</item>
+
+    </string-array>
+
+    <string name="utsa_day_quiz_title">UTSA Quiz</string>
+    <string-array name="general_UTSA_Day_UTSA_questions_array">
+        <item>¿Cuántos estudiantes tiene la UTSA?</item>
+        <item>¿Cuándo fue fundada la UTSA?</item>
+        <item>¿De qué es la estatua de Rowdy?</item>
+        <item>¿Qué porcentaje de estudiantes son la primera generación de su familia en asistir a una Universidad?</item>
+    </string-array>
+
+    <string-array name="general_UTSA_Day_UTSA_answers_array">
+        <item>35000</item>
+        <item>24000</item>
+        <item>19000</item>
+        <item>8000</item>
+
+        <item>1969</item>
+        <item>1982</item>
+        <item>1942</item>
+        <item>1899</item>
+
+        <item>Roadrunner</item>
+        <item>Alamo</item>
+        <item>UTSAs President</item>
+        <item>Texas Star</item>
+
+        <item>72%</item>
+        <item>42%</item>
+        <item>33%</item>
+        <item>74%</item>
+
+
+    </string-array>
+
+</resources>
