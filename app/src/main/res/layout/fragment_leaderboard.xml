@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:transitionGroup="true"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/leaderboard_title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/titleTextStyle"
         android:text="@string/leaderboard"
+        android:textColor="?attr/colorTertiary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -20,6 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:requiresFadingEdge="vertical"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/leaderboard_recycler_layout"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        style="@style/titleTextStyle"
         android:text="@string/quizzes"
+        android:textColor="?attr/colorTertiary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/leaderboard_recycler_view"/>
@@ -41,6 +48,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:requiresFadingEdge="vertical"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/quizzes_recycler_layout"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,14 +85,22 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".7"/>
 
+    <View
+        android:id="@+id/quiz_background_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:visibility="gone"
+        android:background="?attr/colorPrimaryContainer"/>
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/quiz_frag_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@id/frag_container_start_guideline"
-        app:layout_constraintEnd_toEndOf="@id/frag_container_end_guideline"
-        app:layout_constraintTop_toTopOf="@id/frag_container_top_guideline"
-        app:layout_constraintBottom_toBottomOf="@id/frag_container_bottom_guideline"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

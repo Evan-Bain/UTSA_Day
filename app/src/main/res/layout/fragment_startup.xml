@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/startup_motion_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:transitionGroup="true"
     android:layout_margin="16dp"
-    android:background="@color/md_theme_light_secondary"
+    app:layoutDescription="@xml/fragment_startup_scene"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".startup.StartupFragment" >
 
@@ -13,8 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome_to"
-        android:textColor="@color/md_theme_light_scrim"
-        android:fontFamily="sans-serif"
+        style="@style/titleTextStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -23,8 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dot"
-        android:textColor="@color/md_theme_light_scrim"
-        android:fontFamily="sans-serif"
+        style="@style/titleTextStyle"
         app:layout_constraintStart_toEndOf="@id/welcome_to_text"
         app:layout_constraintBottom_toBottomOf="@id/welcome_to_text"/>
 
@@ -33,8 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dot"
-        android:textColor="@color/md_theme_light_scrim"
-        android:fontFamily="sans-serif"
+        style="@style/titleTextStyle"
         app:layout_constraintStart_toEndOf="@id/first_dot_text"
         app:layout_constraintBottom_toBottomOf="@id/welcome_to_text"/>
 
@@ -43,10 +42,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dot"
-        android:textColor="@color/md_theme_light_scrim"
-        android:fontFamily="sans-serif"
+        style="@style/titleTextStyle"
         app:layout_constraintStart_toEndOf="@id/second_dot_text"
         app:layout_constraintBottom_toBottomOf="@id/welcome_to_text"/>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/languages_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/language"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/utsa_day_text"
@@ -54,8 +60,7 @@
         android:layout_height="wrap_content"
         android:text="@string/utsa_day"
         android:textSize="50sp"
-        android:textColor="@color/md_theme_light_scrim"
-        android:fontFamily="sans-serif"
+        android:textColor="?attr/colorTertiary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/third_dot_text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,8 +78,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/how_much_do_you_know_about_computer_science"
-        android:textColor="@color/md_theme_light_scrim"
-        android:fontFamily="sans-serif"
+        style="@style/titleTextStyle"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/test_knowledge_text_guideline"/>
@@ -119,15 +124,12 @@
 
     <ImageView
         android:id="@+id/image_view_rowdy_logo"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@drawable/rowdylogo"
-        app:layout_constraintBottom_toBottomOf="@+id/navigate_to_leaderboard_button"
-        app:layout_constraintStart_toStartOf="@+id/navigate_to_leaderboard_button"
-        app:layout_constraintEnd_toEndOf="@+id/navigate_to_leaderboard_button"
+        app:layout_constraintBottom_toBottomOf="@id/navigate_to_leaderboard_button"
+        app:layout_constraintStart_toStartOf="@id/navigate_to_leaderboard_button"
+        app:layout_constraintEnd_toEndOf="@id/navigate_to_leaderboard_button"
         android:layout_marginBottom="20dp"/>
 
-    =
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

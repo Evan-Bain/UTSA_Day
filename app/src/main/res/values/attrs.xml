@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="headerTextStyle" format="reference" />
+    <attr name="bodyTextStyle" format="reference"/>
+    <attr name="freeBodyTextStyle" format="reference" />
+</resources>

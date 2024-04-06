@@ -11,8 +11,9 @@
     <string name="welcome">Bienvenido</string>
     <string name="utsa_day">Día de UTSA</string>
     <string name="how_much_do_you_know_about_computer_science">¿Cuánto sabes sobre Informática?</string>
-    <string name="enter_name">Please enter your name:</string>
-    <string name="enter_name_edit">Enter name</string>
+    <string name="enter_name">Por favor, escriba su nombre:</string>
+    <string name="enter_name_edit">Ingrese su nombre</string>
+    <string name="language">English</string>
 
     <string name="points">20 pts</string>
 

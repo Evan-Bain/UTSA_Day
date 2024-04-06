@@ -3,10 +3,16 @@ package com.example.utsa_day.leaderboard.quiz
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.map
+import androidx.lifecycle.viewModelScope
 import com.example.utsa_day.R
+import com.example.utsa_day.leaderboard.model.LeaderboardDao
+import com.example.utsa_day.leaderboard.model.data.LeaderboardTable
+import kotlinx.coroutines.launch
 
 class QuizViewModel : ViewModel() {
+
     private var _initialized = false
     val initialized: Boolean
         get() = _initialized
@@ -114,15 +120,15 @@ class QuizViewModel : ViewModel() {
     }
 
     val resultMessageText = nextButtonClicked.map {
-        setResultText("Congratulations", "Unfortunately")
+        setResultText("Congratulations", "Congratulations")
     }
 
     val resultText = nextButtonClicked.map {
-        setResultText("You Passed", "You Failed")
+        setResultText("You Gained", "You Gained")
     }
 
     val percentText = nextButtonClicked.map {
-        "${_answersCorrect*20}%"
+        "${_answersCorrect*5} pts"
     }
 
     private fun setResultText(passText: String, failText: String): String {
@@ -139,5 +145,13 @@ class QuizViewModel : ViewModel() {
 
     fun setQuizVisible(value: Boolean) {
         _quizVisible.value = value
+    }
+
+    private val _name = MutableLiveData<String>()
+    val name: LiveData<String>
+        get() = _name
+
+    fun setName(value: String) {
+        _name.value = value
     }
 }

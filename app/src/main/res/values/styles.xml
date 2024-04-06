@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- text -->
+    <style name="bodyTextStyle" parent="android:style/Widget.TextView">
+        <item name="fontFamily">@font/open_sans_semibold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="titleTextStyle" parent="@style/bodyTextStyle">
+        <item name="fontFamily">@font/open_sans_semibold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="freeBodyTextStyle" parent="@style/bodyTextStyle">
+        <item name="fontFamily">@font/open_sans_semibold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- toolbar -->
+    <style name="toolbarTextStyle">
+        <item name="fontFamily">@font/open_sans_semibold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+</resources>

@@ -1,6 +1,7 @@
 package com.example.utsa_day.leaderboard.quiz
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,16 +9,19 @@ import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.example.utsa_day.R
 import com.example.utsa_day.databinding.FragmentQuizBinding
 import com.example.utsa_day.MainViewModel
+import com.example.utsa_day.leaderboard.model.LeaderboardDatabase
+import com.example.utsa_day.leaderboard.model.data.LeaderboardTable
 import com.example.utsa_day.leaderboard.model.data.Quiz
 
 class QuizFragment : Fragment() {
 
     private lateinit var binding: FragmentQuizBinding
     private val quizViewModel: QuizViewModel by viewModels()
-    private val leaderboardViewModel: MainViewModel by activityViewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
 
     private val TAG = "QuizFragment"
 
@@ -36,6 +40,7 @@ class QuizFragment : Fragment() {
         val quizCorrectAnswers = quizStrings.correctAnswers
 
         binding.quizTitle.text = quizStrings.name
+        binding.quizQuestion.movementMethod = ScrollingMovementMethod()
 
         binding.enterNameEditText.editText?.doOnTextChanged { text, _, _, _ ->
 
@@ -60,7 +65,15 @@ class QuizFragment : Fragment() {
         )
 
         quizViewModel.quizVisible.observe(viewLifecycleOwner) {
-            if (!it) leaderboardViewModel.setRemoveQuiz()
+            if (!it) {
+                with(mainViewModel) {
+                    insertPerson(LeaderboardTable(
+                        quizViewModel.name.value!!,
+                        quizViewModel.answersCorrect * 5)
+                    )
+                    setRemoveQuiz(true)
+                }
+            }
         }
 
         quizViewModel.nextButtonEnabled.observe(viewLifecycleOwner) {
@@ -79,6 +92,7 @@ class QuizFragment : Fragment() {
 
             if (!quizViewModel.initialized) {
                 quizViewModel.setInitialized()
+                quizViewModel.setName(binding.enterNameEditText.editText?.text.toString())
                 with(binding.quizMotionLayout) {
                     setTransition(R.id.quiz_end)
                     transitionToEnd()

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     app:layoutDescription="@xml/fragment_startup_scene"
-    android:background="@color/md_theme_light_secondary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -28,13 +27,14 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/main_frag_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_graph"
+        android:background="?attr/colorPrimaryContainer"
         app:layout_constraintTop_toBottomOf="@id/main_toolbar_layout"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"/>
 
 
 

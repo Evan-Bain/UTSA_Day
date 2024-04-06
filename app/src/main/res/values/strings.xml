@@ -14,6 +14,7 @@
     <string name="points">20 pts</string>
     <string name="enter_name">Please enter your name:</string>
     <string name="enter_name_edit">Enter name</string>
+    <string name="language">Español</string>
 
     <string name="hardware_quiz_title">Hardware Quiz</string>
     <string-array name="general_UTSA_Day_hardware_questions_array">

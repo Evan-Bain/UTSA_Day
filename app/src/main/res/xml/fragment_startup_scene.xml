@@ -2,102 +2,175 @@
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- Start state with all elements fully transparent -->
-    <ConstraintSet android:id="@+id/start">
+   <Transition android:id="@+id/welcome_to_transition"
+       app:constraintSetStart="@id/welcome_to_start"
+       app:constraintSetEnd="@id/welcome_to_end"
+       app:duration="1500"
+       app:autoTransition="animateToEnd"/>
+
+    <ConstraintSet android:id="@+id/welcome_to_start">
         <Constraint
-            android:id="@+id/navigate_to_leaderboard_button"
-            android:alpha="0"
+            android:id="@id/welcome_to_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:alpha="0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <Constraint
-            android:id="@+id/image_view_rowdy_logo"
-            android:alpha="0"
+            android:id="@id/first_dot_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:alpha="0"
+            app:layout_constraintStart_toEndOf="@id/welcome_to_text"
+            app:layout_constraintBottom_toBottomOf="@id/welcome_to_text"/>
+
+        <Constraint
+            android:id="@id/second_dot_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            app:layout_constraintStart_toEndOf="@id/first_dot_text"
+            app:layout_constraintBottom_toBottomOf="@id/welcome_to_text"/>
+
+        <Constraint
+            android:id="@id/third_dot_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            app:layout_constraintStart_toEndOf="@id/second_dot_text"
+            app:layout_constraintBottom_toBottomOf="@id/welcome_to_text"/>
+
+        <Constraint
+            android:id="@id/languages_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            android:text="@string/language"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <Constraint
-            android:id="@+id/test_knowledge_text"
-            android:alpha="0"
+            android:id="@id/utsa_day_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:alpha="0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@id/third_dot_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/test_knowledge_text"/>
 
         <Constraint
-            android:id="@+id/utsa_day_text"
-            android:alpha="0"
+            android:id="@id/test_knowledge_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Constraint
-            android:id="@+id/welcome_to_text"
             android:alpha="0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/test_knowledge_text" />
-    </ConstraintSet>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/test_knowledge_text_guideline"/>
 
-    <!-- End state with all elements fully opaque -->
-    <ConstraintSet android:id="@+id/end">
         <Constraint
             android:id="@id/navigate_to_leaderboard_button"
-            android:alpha="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0"
+            app:layout_constraintStart_toStartOf="@id/navigate_to_leaderboard_button_guideline_start"
+            app:layout_constraintEnd_toEndOf="@id/navigate_to_leaderboard_button_guideline_end"
+            app:layout_constraintTop_toTopOf="@id/navigate_to_leaderboard_button_guideline_top"
+            app:layout_constraintBottom_toBottomOf="@id/navigate_to_leaderboard_button_guideline_bottom"/>
 
         <Constraint
-            android:id="@+id/image_view_rowdy_logo"
-            android:alpha="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <Constraint
-            android:id="@+id/test_knowledge_text"
-            android:alpha="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Constraint
-            android:id="@+id/utsa_day_text"
-            android:alpha="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Constraint
-            android:id="@+id/welcome_to_text"
-            android:alpha="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/test_knowledge_text" />
+            android:id="@id/image_view_rowdy_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:alpha="0"
+            app:layout_constraintBottom_toBottomOf="@id/navigate_to_leaderboard_button"
+            app:layout_constraintStart_toStartOf="@id/navigate_to_leaderboard_button"
+            app:layout_constraintEnd_toEndOf="@id/navigate_to_leaderboard_button"
+            android:layout_marginBottom="20dp"/>
     </ConstraintSet>
 
-    <!-- Transition with the default fade-in effect -->
-    <Transition
-        app:constraintSetEnd="@id/end"
-        app:constraintSetStart="@+id/start"
-        app:duration="3000"
-        app:autoTransition="animateToEnd"/>
+    <ConstraintSet android:id="@+id/welcome_to_end">
+        <Constraint
+            android:id="@id/welcome_to_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Constraint
+            android:id="@id/first_dot_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            app:layout_constraintStart_toEndOf="@id/welcome_to_text"
+            app:layout_constraintBottom_toBottomOf="@id/welcome_to_text"/>
+
+        <Constraint
+            android:id="@id/second_dot_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            app:layout_constraintStart_toEndOf="@id/first_dot_text"
+            app:layout_constraintBottom_toBottomOf="@id/welcome_to_text"/>
+
+        <Constraint
+            android:id="@id/third_dot_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            app:layout_constraintStart_toEndOf="@id/second_dot_text"
+            app:layout_constraintBottom_toBottomOf="@id/welcome_to_text"/>
+
+        <Constraint
+            android:id="@id/languages_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            android:text="@string/language"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Constraint
+            android:id="@id/utsa_day_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/third_dot_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/test_knowledge_text"/>
+
+        <Constraint
+            android:id="@id/test_knowledge_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/test_knowledge_text_guideline"/>
+
+        <Constraint
+            android:id="@id/navigate_to_leaderboard_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="1"
+            app:layout_constraintStart_toStartOf="@id/navigate_to_leaderboard_button_guideline_start"
+            app:layout_constraintEnd_toEndOf="@id/navigate_to_leaderboard_button_guideline_end"
+            app:layout_constraintTop_toTopOf="@id/navigate_to_leaderboard_button_guideline_top"
+            app:layout_constraintBottom_toBottomOf="@id/navigate_to_leaderboard_button_guideline_bottom"/>
+
+        <Constraint
+            android:id="@id/image_view_rowdy_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:alpha="1"
+            app:layout_constraintBottom_toBottomOf="@id/navigate_to_leaderboard_button"
+            app:layout_constraintStart_toStartOf="@id/navigate_to_leaderboard_button"
+            app:layout_constraintEnd_toEndOf="@id/navigate_to_leaderboard_button"
+            android:layout_marginBottom="20dp"/>
+    </ConstraintSet>
 </MotionScene>
 
 
