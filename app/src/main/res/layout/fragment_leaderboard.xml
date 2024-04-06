@@ -48,4 +48,42 @@
         app:layout_constraintTop_toBottomOf="@id/quizzes_title_text"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/frag_container_start_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/frag_container_end_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".9"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/frag_container_top_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/frag_container_bottom_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".7"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/quiz_frag_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/frag_container_start_guideline"
+        app:layout_constraintEnd_toEndOf="@id/frag_container_end_guideline"
+        app:layout_constraintTop_toTopOf="@id/frag_container_top_guideline"
+        app:layout_constraintBottom_toBottomOf="@id/frag_container_bottom_guideline"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

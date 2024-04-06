@@ -25,10 +25,19 @@ class QuizFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
-        val quizText: List<String> =
-            requireArguments().getStringArray("quizText")!!.toList()
-        val quizCorrectAnswers: List<String> =
-            requireArguments().getStringArray("quizCorrectAnswers")!!.toList()
+        val quizStrings: Quiz = requireArguments().getParcelable("quizSelected")!!
+        val quizText = quizStrings.getQuizStrings()
+        val quizCorrectAnswers = quizStrings.correctAnswers
+
+        viewModel.setQuizStringAnswers(
+            listOf(
+                quizText[0]?.get(0) ?: "ERROR",
+                quizText[0]?.get(1) ?: "ERROR",
+                quizText[0]?.get(2) ?: "ERROR",
+                quizText[0]?.get(3) ?: "ERROR",
+                quizText[0]?.get(4) ?: "ERROR"
+            )
+        )
 
         viewModel.nextButtonEnabled.observe(viewLifecycleOwner) {
             with(binding.quizMotionLayout) {
@@ -78,17 +87,16 @@ class QuizFragment : Fragment() {
             binding.quizRadioGroup.clearCheck()
 
             //only set the text for quiz for how many questions there are
-            if (it < 5) {
+            if (it < 4) {
 
                 //set text in quiz with dataBinding
                 viewModel.setQuizStringAnswers(
                     listOf(
-                        quizText[it],
-                        quizText[it],
-                        quizText[it],
-                        quizText[it],
-                        quizText[it],
-                        quizText[it],
+                        quizText[it]?.get(0) ?: "ERROR",
+                        quizText[it]?.get(1) ?: "ERROR",
+                        quizText[it]?.get(2) ?: "ERROR",
+                        quizText[it]?.get(3) ?: "ERROR",
+                        quizText[it]?.get(4) ?: "ERROR"
                     )
                 )
             } else {
